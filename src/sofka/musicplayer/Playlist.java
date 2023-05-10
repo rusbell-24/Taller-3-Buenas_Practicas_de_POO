@@ -10,9 +10,9 @@ public class Playlist extends SortBy{
     public void addSongs(String namePlayList, ArrayList<String> idSongs){
         customList.add(namePlayList);
         for (String id : idSongs) {
-            for (ArrayList cancion: libraryToShow) {
-                if (cancion.get(0).equals(id)){
-                    customList.add(cancion);
+            for (ArrayList song: libraryToShow) {
+                if (song.get(0).equals(id)){
+                    customList.add(song);
                 }
             }
         }
