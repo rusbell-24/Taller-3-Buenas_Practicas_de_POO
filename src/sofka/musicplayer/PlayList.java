@@ -3,7 +3,7 @@ package sofka.musicplayer;
 
 import java.util.ArrayList;
 
-public class Playlist extends SortBy{
+public class PlayList extends SortBy{
 
     private ArrayList customList = new ArrayList<>();
 
