@@ -18,7 +18,7 @@ import java.util.List;
  *  @version 1.0.0 08-05-2023
  *  @since 1.0.0
  */
-public class SortBy extends SongsLibrary{
+public class SortBy extends SongsLibrary {
 
     /**
      * ArrayList de dimension 2, servira como recipiente dinamico para
@@ -157,11 +157,6 @@ public class SortBy extends SongsLibrary{
     public List<ArrayList<String>> getLibraryToShow() {
         return libraryToShow;
     }
-
-    public void setLibraryToShow(List<ArrayList<String>> libraryToShow) {
-        this.libraryToShow = libraryToShow;
-    }
-
 
     /**
      * Sobreescritura necesaria al heredar de la clase abstracta SongsLibrary.
