@@ -141,9 +141,6 @@ public class SortBy extends SongsLibrary implements IMusicPlayer{
                 return o2.get(a).compareTo(o1.get(a));
             }
         });
-        for (ArrayList song : libraryToShow) {
-            System.out.println(song);
-        }
     }
 
 
