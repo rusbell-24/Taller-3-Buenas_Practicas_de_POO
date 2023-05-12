@@ -18,7 +18,7 @@ import java.util.List;
  *  @version 1.0.0 08-05-2023
  *  @since 1.0.0
  */
-public class SortBy extends SongsLibrary {
+public class SortBy extends SongsLibrary implements IMusicPlayer{
 
     /**
      * ArrayList de dimension 2, servira como recipiente dinamico para
@@ -154,7 +154,7 @@ public class SortBy extends SongsLibrary {
      *
      * @since 1.0.0
      */
-    public List<ArrayList<String>> getLibraryToShow() {
+    public List<ArrayList<String>> getCustomSongList() {
         return libraryToShow;
     }
 
