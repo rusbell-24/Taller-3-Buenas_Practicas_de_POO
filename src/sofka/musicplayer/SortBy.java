@@ -108,10 +108,50 @@ public class SortBy extends SongsLibrary implements IMusicPlayer{
     }
 
     /**
-     * Se crean ArrayLists por cada genero para que el siguiente metodo pueda llenar cada ArrayList
-     * con las canciones correspondientes a cada genero
-     * Para este caso se usaran 3 generos musicales:
+     * Este metodo organiza en orden descendente el ArrayList de segunda dimension que se le entregue
+     * Recibe en este caso libraryToShow y lo retorna organizado segun lo que se le pida con el @param a int
+     *
+     *
+     * ex:  List<ArrayList<String>> listaDeNombres = [[ "4", "Alberto"],
+     *                                                  [ "3", "Justin"],
+     *                                                  [ "1", "Sebastian"],
+     *                                                  [ "2", "Karina"]]
+     *
+     *      Aplicando el metodo descendenSort() a --> listaDeNombres organizando por orden numerico:
+     *      listaDeNombres = [[ "4", "Alberto"],
+     *                          [ "3", "Justin"],
+     *                          [ "2", "Karina"],
+     *                          [ "1", "Sebastian"]]
+     *
+     *
+     * @return libraryToShow ArrayList de 2D, usando el ciclo for de la linea 121 imprime todas las lineas
+     *                                        de libraryToShow organizado bajo peticion.
+     *
+     * @since
+     *
+     *
+     *
+     *
      */
+    public void descendentSort() {
+        Collections.sort(libraryToShow, new Comparator<ArrayList<String>>() {
+            @Override
+            public int compare(ArrayList<String> o1, ArrayList<String> o2) {
+
+                return o2.get(a).compareTo(o1.get(a));
+            }
+        });
+        for (ArrayList song : libraryToShow) {
+            System.out.println(song);
+        }
+    }
+
+
+        /**
+         * Se crean ArrayLists por cada genero para que el siguiente metodo pueda llenar cada ArrayList
+         * con las canciones correspondientes a cada genero
+         * Para este caso se usaran 3 generos musicales:
+         */
     List<ArrayList<String>> rockEnEspañol = new ArrayList<>();
     List<ArrayList<String>> salsa = new ArrayList<>();
     List<ArrayList<String>> urbanoLatino = new ArrayList<>();
