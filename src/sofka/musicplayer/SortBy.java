@@ -159,6 +159,16 @@ public class SortBy extends SongsLibrary {
     }
 
     /**
+     * Metodo Setter para modificar la informacion contenida en libraryToShow
+     *
+     * @since
+     */
+    public void setLibraryToShow(List<ArrayList<String>> libraryToShow) {
+        this.libraryToShow = libraryToShow;
+    }
+
+
+    /**
      * Sobreescritura necesaria al heredar de la clase abstracta SongsLibrary.
      *
      * Se utiliza un ciclo for para que recorra libraryToShow y reproduzca cada cancion contenida
