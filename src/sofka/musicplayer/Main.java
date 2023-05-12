@@ -4,9 +4,57 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * En la clase Main se contruye toda la interfaz con la que el usuario va a interactuar
+ * con la biblioteca y el reproductor de musica, tambien se contruye aqui la parte trasera
+ * del sistema donde se indica que accion se tomara cuando el usuario solicite una determinada
+ * funcion.
+ *
+ * ex:  Interfaz de consola que permite al Usuario seleccionar X,Y y Z funciones:
+ *          Si Usuario selecciona funcion X {
+ *                      Por favor sistema invoca la clase W y su metodo X }
+ *          Si Usuario selecciona funcion Y {
+ *                       Por favor sistema invoca la clase Q y su metodo Y }
+ *          Etc...
+ *
+ * @version 1.0.0 11-05-2023
+ *
+ * @author: Rusbell Ruiz Portocarrero - rusbell.ruiz.p@gmail.com
+ *
+ * @since 1.0.0
+ */
 public class Main {
     public static void main(String[] args){
 
+        /**
+         * @param firstLevelOptions,secondLevelOptions,thirdLevelOptions Strings
+         * Se crean variables que se usaran en el mecanismo de menus que se le mostrara al Usuario.
+         * Tenemos dos submenus por lo que se creo una variable para cada nivel de profundidad de menu
+         * En cada nivel se utiliza su determinada variable para realizar una determinada accion ya sea
+         * con un if else o con un switch case
+         *
+         * ex:  Menu principal:
+         *          if firstLevelOptions = 1 {
+         *                  Muestre Segundo Menu:
+         *                          if secondLevelOptions = 1 {
+         *                                  Muestre Tercer Menu:
+         *                                      - opcion 1
+         *                                      - opcion 2
+         *                                      - etc..
+         *                           }
+         *          }
+         *          if firstLevelOptions = 2 {
+         *                  boolean exit = True;
+         *                  Salga del sistema;
+         *          }
+         *
+         * @param exit boolean
+         * Se utilizo una lista de ArrayList dinamica, dinamicArray, para poder lograr versatilidad
+         * entre las funciones del menu y los metodos de diferentes clases
+         *
+         * @param userData
+         * Variable para guardar la respuesta del Usuario a un dado menu
+         */
         String firstLevelOptions;
         String secondLevelOptions;
         String thirdLevelOptions;
@@ -14,6 +62,11 @@ public class Main {
         List<ArrayList<String>> dinamicArray = new ArrayList<>();
 
         Scanner userData = new Scanner(System.in);
+
+        /**
+         * Se utiliza un Do para crear el ciclo de interfaz grafica para el Usuario e ingresar al
+         * primer menu o menu principal
+         */
 
         do{
             System.out.println("Bienvenido a nuestro reproductor de musica \n");
@@ -25,21 +78,35 @@ public class Main {
             System.out.println("5. Salir\n");
 
             System.out.println("Ingrese su opción: ");
+            /**
+             * Se registra la respuesta del Usuario al menu principal
+             * Se crea un objeto seeLibrary de la clase sortBy que nos ayudara a organizar las canciones
+             * Se utiliza un if para evaluar cual fue la repsuesta del usuario e iniciar una determinada
+             * cadena de acciones.
+             */
             firstLevelOptions = userData.next();
-
             SortBy seeLibrary = new SortBy();
             dinamicArray = seeLibrary.getSongList();
             seeLibrary.setLibraryToShowToSongList();
             if (firstLevelOptions.equals("1")) {
+                /**
+                 * 1. Ver biblioteca
+                 */
                 seeLibrary.setLibraryToShowToSongList();
                 for (ArrayList song : seeLibrary.getSongList()) {
                     System.out.println(song);
                 }
-
             }else if (firstLevelOptions.equals("2")) {
+                /**
+                 * 2. Reproducir Biblioteca
+                 */
                 seeLibrary.setLibraryToShowToSongList();
                 seeLibrary.playSongList();
             }else if (firstLevelOptions.equals("3")) {
+                /**
+                 * 3. Ordenar canciones e ingresar al segundo menu
+                 *
+                 */
                 seeLibrary.setLibraryToShowToSongList();
 
                 System.out.println("_______Opciones______");
@@ -82,6 +149,14 @@ public class Main {
 
                 System.out.println("Ingrese su opcion: ");
                 secondLevelOptions = userData.next();
+
+                /**
+                 * Se utiliza un switch case para evaluar que acciones solicito el Usuario y que
+                 * acciones debe tomar el Usuario en este segundo nivel
+                 * Las acciones solicitadas aqui solo organizaran los datos, luego el usuario debe
+                 * definir que accion se tomara con esas canciones organizadas.
+                 */
+
                 switch (secondLevelOptions) {
                     case "1":
                         seeLibrary.playSongList();
