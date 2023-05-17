@@ -20,6 +20,8 @@ import java.util.List;
  */
 public class SortBy extends SongsLibrary implements IMusicPlayer{
 
+
+
     /**
      * ArrayList de dimension 2, servira como recipiente dinamico para
      * efectuar la reorganizacion que solicite el usuario, como su nombre
@@ -220,7 +222,7 @@ public class SortBy extends SongsLibrary implements IMusicPlayer{
         for (int i = 0; i < libraryToShow.size(); i++) {
             System.out.println( "Reproduciendo..." + libraryToShow.get(i));
             try {
-                Thread.sleep(15000);
+                Thread.sleep(10000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

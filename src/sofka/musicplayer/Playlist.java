@@ -126,7 +126,7 @@ public class Playlist extends SongsLibrary implements IMusicPlayer{
         for (int i = 0; i < customList.size(); i++) {
             System.out.println("Reproduciendo..." + customList.get(i));
             try {
-                Thread.sleep(15000);
+                Thread.sleep(10000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
