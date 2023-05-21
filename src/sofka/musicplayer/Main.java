@@ -5,17 +5,20 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- * En la clase Main se contruye toda la interfaz con la que el usuario va a interactuar
- * con la biblioteca y el reproductor de musica, tambien se contruye aqui la parte trasera
- * del sistema donde se indica que accion se tomara cuando el usuario solicite una determinada
+ * En la clase Main se contruye toda la interfaz con la que el usuario va a
+ * interactuar
+ * con la biblioteca y el reproductor de musica, tambien se contruye aqui la
+ * parte trasera
+ * del sistema donde se indica que accion se tomara cuando el usuario solicite
+ * una determinada
  * funcion.
  *
- * ex:  Interfaz de consola que permite al Usuario seleccionar X,Y y Z funciones:
- *          Si Usuario selecciona funcion X {
- *                      Por favor sistema invoca la clase W y su metodo X }
- *          Si Usuario selecciona funcion Y {
- *                       Por favor sistema invoca la clase Q y su metodo Y }
- *          Etc...
+ * ex: Interfaz de consola que permite al Usuario seleccionar X,Y y Z funciones:
+ * Si Usuario selecciona funcion X {
+ * Por favor sistema invoca la clase W y su metodo X }
+ * Si Usuario selecciona funcion Y {
+ * Por favor sistema invoca la clase Q y su metodo Y }
+ * Etc...
  *
  * @version 1.0.0 11-05-2023
  *
@@ -24,39 +27,86 @@ import java.util.Scanner;
  * @since 1.0.0
  */
 public class Main {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         menu();
     }
 
-    public static void menu(){
+    public static void menu() {
         /**
          * @param firstLevelOptions,secondLevelOptions,thirdLevelOptions Strings
-         * Se crean variables que se usaran en el mecanismo de menus que se le mostrara al Usuario.
-         * Tenemos dos submenus por lo que se creo una variable para cada nivel de profundidad de menu
-         * En cada nivel se utiliza su determinada variable para realizar una determinada accion ya sea
-         * con un if else o con un switch case
+         *                                                               Se crean
+         *                                                               variables que
+         *                                                               se usaran en el
+         *                                                               mecanismo de
+         *                                                               menus que se le
+         *                                                               mostrara al
+         *                                                               Usuario.
+         *                                                               Tenemos dos
+         *                                                               submenus por lo
+         *                                                               que se creo una
+         *                                                               variable para
+         *                                                               cada nivel de
+         *                                                               profundidad de
+         *                                                               menu
+         *                                                               En cada nivel
+         *                                                               se utiliza su
+         *                                                               determinada
+         *                                                               variable para
+         *                                                               realizar una
+         *                                                               determinada
+         *                                                               accion ya sea
+         *                                                               con un if else
+         *                                                               o con un switch
+         *                                                               case
          *
-         * ex:  Menu principal:
-         *          if firstLevelOptions = 1 {
-         *                  Muestre Segundo Menu:
-         *                          if secondLevelOptions = 1 {
-         *                                  Muestre Tercer Menu:
-         *                                      - opcion 1
-         *                                      - opcion 2
-         *                                      - etc..
-         *                           }
-         *          }
-         *          if firstLevelOptions = 2 {
-         *                  boolean exit = True;
-         *                  Salga del sistema;
-         *          }
+         *                                                               ex: Menu
+         *                                                               principal:
+         *                                                               if
+         *                                                               firstLevelOptions
+         *                                                               = 1 {
+         *                                                               Muestre Segundo
+         *                                                               Menu:
+         *                                                               if
+         *                                                               secondLevelOptions
+         *                                                               = 1 {
+         *                                                               Muestre Tercer
+         *                                                               Menu:
+         *                                                               - opcion 1
+         *                                                               - opcion 2
+         *                                                               - etc..
+         *                                                               }
+         *                                                               }
+         *                                                               if
+         *                                                               firstLevelOptions
+         *                                                               = 2 {
+         *                                                               boolean exit =
+         *                                                               True;
+         *                                                               Salga del
+         *                                                               sistema;
+         *                                                               }
          *
-         * @param exit boolean
-         * Se utilizo una lista de ArrayList dinamica, dinamicArray, para poder lograr versatilidad
-         * entre las funciones del menu y los metodos de diferentes clases
+         * @param exit                                                   boolean
+         *                                                               Se utilizo una
+         *                                                               lista de
+         *                                                               ArrayList
+         *                                                               dinamica,
+         *                                                               dinamicArray,
+         *                                                               para poder
+         *                                                               lograr
+         *                                                               versatilidad
+         *                                                               entre las
+         *                                                               funciones del
+         *                                                               menu y los
+         *                                                               metodos de
+         *                                                               diferentes
+         *                                                               clases
          *
          * @param userData
-         * Variable para guardar la respuesta del Usuario a un dado menu
+         *                                                               Variable para
+         *                                                               guardar la
+         *                                                               respuesta del
+         *                                                               Usuario a un
+         *                                                               dado menu
          */
         String firstLevelOptions;
         String secondLevelOptions;
@@ -68,17 +118,20 @@ public class Main {
         Scanner userData = new Scanner(System.in);
 
         /**
-         * Se utiliza un Do para crear el ciclo de interfaz grafica para el Usuario e ingresar al
+         * Se utiliza un Do para crear el ciclo de interfaz grafica para el Usuario e
+         * ingresar al
          * primer menu o menu principal
          */
 
-        do{
+        do {
             showMenu();
 
             /**
              * Se registra la respuesta del Usuario al menu principal
-             * Se crea un objeto seeLibrary de la clase sortBy que nos ayudara a organizar las canciones
-             * Se utiliza un if para evaluar cual fue la repsuesta del usuario e iniciar una determinada
+             * Se crea un objeto seeLibrary de la clase sortBy que nos ayudara a organizar
+             * las canciones
+             * Se utiliza un if para evaluar cual fue la repsuesta del usuario e iniciar una
+             * determinada
              * cadena de acciones.
              */
             firstLevelOptions = userData.next();
@@ -89,8 +142,7 @@ public class Main {
 
             if (firstLevelOptions.equals("1")) {
                 System.out.println(
-                        "________Biblioteca General De Canciones______\n"
-                );
+                        "________Biblioteca General De Canciones______\n");
 
                 /**
                  * 1. Ver biblioteca
@@ -99,16 +151,14 @@ public class Main {
                 for (ArrayList song : seeLibrary.getSongList()) {
                     System.out.println(song);
                 }
-            }
-            else if (firstLevelOptions.equals("2")) {
+            } else if (firstLevelOptions.equals("2")) {
 
                 /**
                  * 2. Reproducir Biblioteca
                  */
                 seeLibrary.setLibraryToShowToSongList();
                 seeLibrary.playSongList();
-            }
-            else if (firstLevelOptions.equals("3")) {
+            } else if (firstLevelOptions.equals("3")) {
                 /**
                  * 3. Ordenar canciones e ingresar al segundo menu
                  *
@@ -177,7 +227,8 @@ public class Main {
                 /**
                  * Se utiliza un switch case para evaluar que acciones solicito el Usuario y que
                  * acciones debe tomar el Usuario en este segundo nivel
-                 * Las acciones solicitadas aqui solo organizaran los datos, luego el usuario debe
+                 * Las acciones solicitadas aqui solo organizaran los datos, luego el usuario
+                 * debe
                  * definir que accion se tomara con esas canciones organizadas.
                  */
 
@@ -201,12 +252,17 @@ public class Main {
                         seeLibrary.playSongList();
                         break;
                     case "5":
-                        firstLevelOptions = "5";
+                        System.out.println("Ingrese el año: ");
+                        String yearSearch = userData.next();
+                        seeLibrary.filterByYear(yearSearch);
+                        break;
+                    case "6":
+                        firstLevelOptions = "6";
                         break;
                 }
                 System.out.println(firstLevelOptions);
-            }else if (firstLevelOptions.equals("4")){
-                if(savePlaylist.getStore().size() > 0){
+            } else if (firstLevelOptions.equals("4")) {
+                if (savePlaylist.getStore().size() > 0) {
                     showPlaylistStore(savePlaylist.getStore());
                     do {
                         int idPlaylist;
@@ -217,61 +273,50 @@ public class Main {
                                 case "1":
                                     showPlaylistStore(savePlaylist.getStore());
                                     System.out.println(
-                                            "\nIngrese id de la playlist: "
-                                    );
+                                            "\nIngrese id de la playlist: ");
                                     idPlaylist = userData.nextInt();
-                                    showSongs(savePlaylist.getStore().
-                                            get(idPlaylist - 1).
-                                            getCustomSongList());
+                                    showSongs(savePlaylist.getStore().get(idPlaylist - 1).getCustomSongList());
                                     break;
                                 case "2":
                                     showPlaylistStore(savePlaylist.getStore());
                                     System.out.println(
-                                            "\nIngrese id de la playlist: "
-                                    );
+                                            "\nIngrese id de la playlist: ");
                                     idPlaylist = userData.nextInt();
-                                    savePlaylist.getStore().get(idPlaylist-1).
-                                            playSongList();
+                                    savePlaylist.getStore().get(idPlaylist - 1).playSongList();
                                     break;
                                 case "3":
                                     if (savePlaylist.getStore().size() > 0) {
                                         showPlaylistStore(
-                                                savePlaylist.getStore()
-                                        );
+                                                savePlaylist.getStore());
                                         System.out.println(
-                                                "\nIngrese id de la playlist: "
-                                        );
+                                                "\nIngrese id de la playlist: ");
                                         idPlaylist = userData.nextInt();
                                         try {
                                             savePlaylist.deletePlaylist(
-                                                    idPlaylist
-                                            );
+                                                    idPlaylist);
                                             System.out.println(
-                                                    "Borrado Exitoso.........\n"
-                                            );
+                                                    "Borrado Exitoso.........\n");
                                             secondLevelOptions = "4";
                                         } catch (Exception e) {
                                             System.out.println(
-                                                    "El id es incorrecto.....\n"
-                                            );
+                                                    "El id es incorrecto.....\n");
                                         }
-                                    }else{
+                                    } else {
                                         System.out.println(
-                                                "No existe ninguna playlist"
-                                        );
+                                                "No existe ninguna playlist");
                                     }
                                     break;
                             }
                         }
-                    }while (!secondLevelOptions.equals("4"));
+                    } while (!secondLevelOptions.equals("4"));
 
-                }else{
+                } else {
                     System.out.println(
-                            "No tienes ninguna playlist Creada...........\n\n"
-                    );
+                            "No tienes ninguna playlist Creada...........\n\n");
                 }
 
-            }if (firstLevelOptions.equals("5")) {
+            }
+            if (firstLevelOptions.equals("5")) {
                 String namePlayList;
                 String idSong;
                 boolean createPlayList = false;
@@ -317,13 +362,12 @@ public class Main {
 
                             switch (thirdLevelOptions) {
                                 case "1":
-                                    List<ArrayList<String>> seeSongs =
-                                            newPlayList.getCustomSongList();
+                                    List<ArrayList<String>> seeSongs = newPlayList.getCustomSongList();
 
                                     System.out.println(
                                             "______Lista de reproduccion *** " +
-                                            newPlayList.getPlaylistName() +
-                                            " ***_______");
+                                                    newPlayList.getPlaylistName() +
+                                                    " ***_______");
 
                                     showSongs(seeSongs);
                                     System.out.println("Fin lista..........");
@@ -333,10 +377,9 @@ public class Main {
                                     break;
                                 case "3":
                                     int IdPlaylistToDelete;
-                                    if (savePlaylist.getStore().size() > 0){
+                                    if (savePlaylist.getStore().size() > 0) {
                                         showPlaylistStore(
-                                                savePlaylist.getStore()
-                                        );
+                                                savePlaylist.getStore());
                                         System.out.println("\nIngrese id de " +
                                                 " la playlist a borrar: ");
                                         IdPlaylistToDelete = userData.nextInt();
@@ -344,18 +387,15 @@ public class Main {
                                             savePlaylist.deletePlaylist(
                                                     IdPlaylistToDelete);
                                             System.out.println(
-                                                    "Borrado exitoso........\n"
-                                            );
+                                                    "Borrado exitoso........\n");
                                             thirdLevelOptions = "4";
-                                        }catch (Exception e){
+                                        } catch (Exception e) {
                                             System.out.println(
-                                                    "El id es incorrecto.....\n"
-                                            );
+                                                    "El id es incorrecto.....\n");
                                         }
-                                    }else{
+                                    } else {
                                         System.out.println(
-                                                "No existe ninguna playlist...."
-                                        );
+                                                "No existe ninguna playlist....");
                                     }
 
                                     showPlaylistStore(savePlaylist.getStore());
@@ -370,25 +410,24 @@ public class Main {
 
                         System.out.println("INTENTE EN OTRO MOMENTO::::::::\n");
                     }
-                }else{
+                } else {
                     System.out.println(
                             "\nNo seleccionaste ninguna canción......\n\n");
                 }
-            }else if (firstLevelOptions.equals("6")) {
+            } else if (firstLevelOptions.equals("6")) {
                 System.out.println("Apagando reproductor de musica......");
                 exit = true;
             }
 
-        }while (!exit);
+        } while (!exit);
     }
 
     private static void showPlaylistStore(List<Playlist> playlists) {
         System.out.println("_________PLAYLISTS_________\n");
-        for ( int i = 0; i < playlists.size(); i++) {
+        for (int i = 0; i < playlists.size(); i++) {
             System.out.println(
-                    "Id: " + (i+1) +
-                            " -----nombre de la playlist: " + playlists.
-                            get(i).getPlaylistName());
+                    "Id: " + (i + 1) +
+                            " -----nombre de la playlist: " + playlists.get(i).getPlaylistName());
         }
     }
 
@@ -406,6 +445,7 @@ public class Main {
         System.out.println("| Ingrese su opción:                      |");
         System.out.println("|_________________________________________|\n");
     }
+
     private static void showSortMenu() {
         System.out.println(" ___________________Opciones____________________");
         System.out.println("|Ordenar Por: __________________________________|");
@@ -422,8 +462,7 @@ public class Main {
         System.out.println("|_______________________________________________|");
     }
 
-
-    private static void playlistOptionsMenu(){
+    private static void playlistOptionsMenu() {
         System.out.println(" \n_____Opciones de PlayList_____");
         System.out.println("| _____________________________|");
         System.out.println("||  1. Ver                    ||");
@@ -434,31 +473,32 @@ public class Main {
         System.out.println("| Que deseas hacer:            |");
         System.out.println("|______________________________|\n");
     }
+
     private static void showPlaybackMenuByOrder() {
-        System.out.println("________________Opciones__________________");
-        System.out.println("| --------------------------------------- |");
-        System.out.println("||  1.Reproducir Lista ordenada          ||");
-        System.out.println("||  2.Reproducir solo salsa              ||");
-        System.out.println("||  3.Reproducir solo Rock en español    ||");
-        System.out.println("||  4.Reproducir solo Urbano latino      ||");
-        System.out.println("||  5.Crear playlist                     ||");
-        System.out.println("||  6.salir                              ||");
-        System.out.println("||_______________________________________||");
-        System.out.println("| Ingrese su opcion:                      |");
-        System.out.println("|_________________________________________|");
+        System.out.println("________________Opciones___________________________");
+        System.out.println("| ------------------------------------------------ |");
+        System.out.println("||  1.Reproducir Lista ordenada                   ||");
+        System.out.println("||  2.Filtrar y Reproducir solo salsa             ||");
+        System.out.println("||  3.Filtrar y Reproducir solo Rock en español   ||");
+        System.out.println("||  4.Filtrar y Reproducir solo Urbano latino     ||");
+        System.out.println("||  5.Filtrar y Reproducir por año                ||");
+        System.out.println("||  6.Crear playlist                              ||");
+        System.out.println("||  7.salir                                       ||");
+        System.out.println("||________________________________________________||");
+        System.out.println("| Ingrese su opcion:                               |");
+        System.out.println("|__________________________________________________|");
     }
 
-    private static void showSongs(List<ArrayList<String>> songs){
+    private static void showSongs(List<ArrayList<String>> songs) {
         for (int i = 0; i < songs.size(); i++) {
             System.out.println(
                     " => " +
-                    " Id: " + songs.get(i).get(0) + "_______" +
-                    " Titulo: " + songs.get(i).get(1) + "_______" +
-                    " Genero: " + songs.get(i).get(2) + "_______" +
-                    " Duracion: " + songs.get(i).get(5) + "_______" +
-                    " Fecha: " + songs.get(i).get(6));
+                            " Id: " + songs.get(i).get(0) + "_______" +
+                            " Titulo: " + songs.get(i).get(1) + "_______" +
+                            " Genero: " + songs.get(i).get(2) + "_______" +
+                            " Duracion: " + songs.get(i).get(5) + "_______" +
+                            " Fecha: " + songs.get(i).get(6));
 
         }
     }
 }
-
