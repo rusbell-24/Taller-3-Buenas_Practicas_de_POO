@@ -292,7 +292,7 @@ public class SortBy extends SongsLibrary implements IMusicPlayer {
         for (int i = 0; i < libraryToShow.size(); i++) {
             System.out.println("Reproduciendo..." + libraryToShow.get(i));
             try {
-                Thread.sleep(10000);
+                Thread.sleep(5000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

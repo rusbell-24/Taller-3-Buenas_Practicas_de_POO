@@ -32,82 +32,7 @@ public class Main {
     }
 
     public static void menu() {
-        /**
-         * @param firstLevelOptions,secondLevelOptions,thirdLevelOptions Strings
-         *                                                               Se crean
-         *                                                               variables que
-         *                                                               se usaran en el
-         *                                                               mecanismo de
-         *                                                               menus que se le
-         *                                                               mostrara al
-         *                                                               Usuario.
-         *                                                               Tenemos dos
-         *                                                               submenus por lo
-         *                                                               que se creo una
-         *                                                               variable para
-         *                                                               cada nivel de
-         *                                                               profundidad de
-         *                                                               menu
-         *                                                               En cada nivel
-         *                                                               se utiliza su
-         *                                                               determinada
-         *                                                               variable para
-         *                                                               realizar una
-         *                                                               determinada
-         *                                                               accion ya sea
-         *                                                               con un if else
-         *                                                               o con un switch
-         *                                                               case
-         *
-         *                                                               ex: Menu
-         *                                                               principal:
-         *                                                               if
-         *                                                               firstLevelOptions
-         *                                                               = 1 {
-         *                                                               Muestre Segundo
-         *                                                               Menu:
-         *                                                               if
-         *                                                               secondLevelOptions
-         *                                                               = 1 {
-         *                                                               Muestre Tercer
-         *                                                               Menu:
-         *                                                               - opcion 1
-         *                                                               - opcion 2
-         *                                                               - etc..
-         *                                                               }
-         *                                                               }
-         *                                                               if
-         *                                                               firstLevelOptions
-         *                                                               = 2 {
-         *                                                               boolean exit =
-         *                                                               True;
-         *                                                               Salga del
-         *                                                               sistema;
-         *                                                               }
-         *
-         * @param exit                                                   boolean
-         *                                                               Se utilizo una
-         *                                                               lista de
-         *                                                               ArrayList
-         *                                                               dinamica,
-         *                                                               dinamicArray,
-         *                                                               para poder
-         *                                                               lograr
-         *                                                               versatilidad
-         *                                                               entre las
-         *                                                               funciones del
-         *                                                               menu y los
-         *                                                               metodos de
-         *                                                               diferentes
-         *                                                               clases
-         *
-         * @param userData
-         *                                                               Variable para
-         *                                                               guardar la
-         *                                                               respuesta del
-         *                                                               Usuario a un
-         *                                                               dado menu
-         */
+
         String firstLevelOptions;
         String secondLevelOptions;
         String thirdLevelOptions;
@@ -237,31 +162,46 @@ public class Main {
                         seeLibrary.playSongList();
                         break;
                     case "2":
+                        firstLevelOptions = "7";
+                        break;
+                }
+                System.out.println(firstLevelOptions);
+
+            } else if (firstLevelOptions.equals("4")) {
+                seeLibrary.setLibraryToShowToSongList();
+                System.out.println("Ingrese el año: ");
+                String yearSearch = userData.next();
+                seeLibrary.filterByYear(yearSearch);
+
+            } else if (firstLevelOptions.equals("5")) {
+                seeLibrary.setLibraryToShowToSongList();
+                System.out.println("1. salta");
+                System.out.println("2. Rock en español");
+                System.out.println("3. Urbano latino");
+
+                secondLevelOptions = userData.next();
+
+                switch (secondLevelOptions) {
+                    case "1":
                         seeLibrary.sortByGender();
                         seeLibrary.setLibraryToShowToSalsa();
                         seeLibrary.playSongList();
                         break;
-                    case "3":
+                    case "2":
                         seeLibrary.sortByGender();
                         seeLibrary.setLibraryToShowToRock();
                         seeLibrary.playSongList();
                         break;
-                    case "4":
+                    case "3":
                         seeLibrary.sortByGender();
                         seeLibrary.setLibraryToShowToUrbano();
                         seeLibrary.playSongList();
                         break;
-                    case "5":
-                        System.out.println("Ingrese el año: ");
-                        String yearSearch = userData.next();
-                        seeLibrary.filterByYear(yearSearch);
-                        break;
-                    case "6":
-                        firstLevelOptions = "6";
-                        break;
+                    default:
+                        System.out.println("Opcion incorrecta.......\n");
                 }
-                System.out.println(firstLevelOptions);
-            } else if (firstLevelOptions.equals("4")) {
+
+            } else if (firstLevelOptions.equals("6")) {
                 if (savePlaylist.getStore().size() > 0) {
                     showPlaylistStore(savePlaylist.getStore());
                     do {
@@ -316,7 +256,7 @@ public class Main {
                 }
 
             }
-            if (firstLevelOptions.equals("5")) {
+            if (firstLevelOptions.equals("7")) {
                 String namePlayList;
                 String idSong;
                 boolean createPlayList = false;
@@ -414,7 +354,7 @@ public class Main {
                     System.out.println(
                             "\nNo seleccionaste ninguna canción......\n\n");
                 }
-            } else if (firstLevelOptions.equals("6")) {
+            } else if (firstLevelOptions.equals("8")) {
                 System.out.println("Apagando reproductor de musica......");
                 exit = true;
             }
@@ -438,9 +378,11 @@ public class Main {
         System.out.println("||        1. Ver biblioteca              ||");
         System.out.println("||        2. Reproducir Biblioteca       ||");
         System.out.println("||        3. Ordenar canciones           ||");
-        System.out.println("||        4. Ver mis Playlist            ||");
-        System.out.println("||        5. Crear Playlist              ||");
-        System.out.println("||        6. Salir                       ||");
+        System.out.println("||        4. Filtar por año              ||");
+        System.out.println("||        5. Filtar por Genero           ||");
+        System.out.println("||        6. Ver mis Playlist            ||");
+        System.out.println("||        7. Crear Playlist              ||");
+        System.out.println("||        8. Salir                       ||");
         System.out.println("|_________________________________________|");
         System.out.println("| Ingrese su opción:                      |");
         System.out.println("|_________________________________________|\n");
@@ -478,12 +420,8 @@ public class Main {
         System.out.println("________________Opciones___________________________");
         System.out.println("| ------------------------------------------------ |");
         System.out.println("||  1.Reproducir Lista ordenada                   ||");
-        System.out.println("||  2.Filtrar y Reproducir solo salsa             ||");
-        System.out.println("||  3.Filtrar y Reproducir solo Rock en español   ||");
-        System.out.println("||  4.Filtrar y Reproducir solo Urbano latino     ||");
-        System.out.println("||  5.Filtrar y Reproducir por año                ||");
-        System.out.println("||  6.Crear playlist                              ||");
-        System.out.println("||  7.salir                                       ||");
+        System.out.println("||  2.Crear playlist                              ||");
+        System.out.println("||  3.salir                                       ||");
         System.out.println("||________________________________________________||");
         System.out.println("| Ingrese su opcion:                               |");
         System.out.println("|__________________________________________________|");
