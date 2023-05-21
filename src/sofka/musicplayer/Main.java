@@ -378,8 +378,8 @@ public class Main {
         System.out.println("||        1. Ver biblioteca              ||");
         System.out.println("||        2. Reproducir Biblioteca       ||");
         System.out.println("||        3. Ordenar canciones           ||");
-        System.out.println("||        4. Filtar por año              ||");
-        System.out.println("||        5. Filtar por Genero           ||");
+        System.out.println("||        4. Filtrar por año              ||");
+        System.out.println("||        5. Filtrar por Genero           ||");
         System.out.println("||        6. Ver mis Playlist            ||");
         System.out.println("||        7. Crear Playlist              ||");
         System.out.println("||        8. Salir                       ||");
